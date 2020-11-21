@@ -122,3 +122,40 @@ if (response.toLowerCase() == "rule") {
 
   response = readlineSync.question(chalk.blue("Enter your Response: "));
 }
+
+
+function quiz(questionAsked, answerGiven, hintGiven) {
+    console.log(chalk.cyanBright(questionAsked));
+    var userAnswer = readlineSync.question(chalk.blue("Enter your Answer: "));
+  
+    if (userAnswer.toLowerCase() === "hint") {
+      console.log(chalk.yellowBright(hintGiven));
+      var hintAnswer = readlineSync.question(chalk.blue("Enter your Answer: "));
+  
+      if (hintAnswer.toLowerCase() === answerGiven.toLowerCase()) {
+        score = score + 5;
+        console.log(chalk.green(' Correct! '));
+        console.log(chalk.bgYellow(' Score:', score + " "));
+        console.log(chalk.greenBright("---------------------------------"));
+  
+      } else {
+        score = score - 5;
+        console.log(chalk.redBright(' Wrong!, correct answer is:', answerGiven));
+        console.log(chalk.bgYellow(' Score:', score + " "));
+        console.log(chalk.green("----------------------------------"));
+      }
+    }
+    else if (userAnswer.toLowerCase() === answerGiven.toLowerCase()) {
+      score = score + 10;
+      console.log(chalk.green(' Correct! '));
+      console.log(chalk.bgYellow(' Score:', score + " "));
+      console.log(chalk.greenBright("----------------------------------"));
+  
+    } else {
+      score = score - 5;
+      console.log(chalk.redBright(' Wrong!, correct answer is:', answerGiven));
+      console.log(chalk.bgYellow(' Score:', score + " "));
+      console.log(chalk.greenBright("----------------------------------"));
+    }
+  
+  }
