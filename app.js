@@ -194,3 +194,33 @@ function quiz(questionAsked, answerGiven, hintGiven) {
     },
   
   ];
+
+
+  var ranking = [];
+for (var i = 0; i < scoreBoard.length; i++) {
+  var rank = -1;
+  for (var j = 0; j < scoreBoard.length; j++) {
+    if(scoreBoard[i].totalScore == scoreBoard[j].totalScore){
+        rank++;
+        scoreBoard[i].totalScore = scoreBoard[i].totalScore+1;
+    }else if(scoreBoard[i].totalScore < scoreBoard[j].totalScore){
+        rank++;
+    }
+  }
+  ranking[rank] = { nickname: scoreBoard[i].playerName, playerscore: scoreBoard[i].totalScore };
+}
+
+function leaderBoard() {
+  console.log(chalk.green("-------------LEADERBOARD-----------"));
+  for (var i = 0; i < ranking.length; i++) {
+    if((i === 0)&&(ranking[i].nickname == userName.toUpperCase())){
+      console.log(chalk.red("Congratulation!, You are the top scorer."));
+      console.log(chalk.cyanBright(`  #${i+1}  ${ranking[i].playerscore-1}  ${ranking[i].nickname} `));
+    }else{
+      console.log(chalk.cyanBright(`  #${i+1}  ${ranking[i].playerscore-1}  ${ranking[i].nickname} `));      
+    }
+  }
+  console.log(chalk.green("-----------------END---------------"));
+}
+
+leaderBoard();
