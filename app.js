@@ -159,3 +159,14 @@ function quiz(questionAsked, answerGiven, hintGiven) {
     }
   
   }
+
+  if (response.toLowerCase() == "start") {
+    console.log(chalk.green("\n--------------START-------------\n"));
+    for (var i = 0; i < quizData.length; i++) {
+      var currentData = quizData[i];
+      quiz(currentData.question, currentData.answer, currentData.hint);
+      if (i == quizData.length - 1) {
+        console.log(chalk.bgRed("\t Your Final Score is:", score, " "));
+      }
+    }
+  }
