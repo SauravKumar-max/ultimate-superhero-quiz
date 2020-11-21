@@ -170,3 +170,27 @@ function quiz(questionAsked, answerGiven, hintGiven) {
       }
     }
   }
+
+  var scoreBoard = [
+    {
+      playerName: userName.toUpperCase(),
+      totalScore: score
+    },
+    {
+      playerName: "ABHAY",
+      totalScore: 70
+    },
+    {
+      playerName: "PRANAY",
+      totalScore: 65
+    },
+    {
+      playerName: "RAHUL",
+      totalScore: 25
+    },
+    {
+      playerName: "HARSH",
+      totalScore: 60
+    },
+  
+  ];
