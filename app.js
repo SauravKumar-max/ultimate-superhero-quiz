@@ -97,3 +97,19 @@ var quizData = [
     hint: " Hint: The answer is in the description."
   }
 ];
+
+console.log(chalk.whiteBright.bgBlue.bold('   WELCOME TO THE ULTIMATE SUPERHERO QUIZ!   \n'));
+
+console.log(
+  chalk.rgb(34, 214, 196).bold('The ultimate superhero quiz is a quiz of Marvel, DC, Anime superheroes. Hope you like it, have fun! \n')
+);
+
+var userName = readlineSync.question(chalk.blueBright("Enter your Name: "));
+
+
+console.log(
+  chalk.white.bgMagenta.bold(`\n Welcome ${userName.toUpperCase()} To The Quiz! \n\n`) +
+  chalk.yellowBright('-Type "Rule" and press enter to know the rules!\n') +
+  chalk.green('-Type "Start" and press enter to start the quiz.\n')
+);
+
