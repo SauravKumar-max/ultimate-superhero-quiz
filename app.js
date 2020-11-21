@@ -113,3 +113,12 @@ console.log(
   chalk.green('-Type "Start" and press enter to start the quiz.\n')
 );
 
+var response = readlineSync.question(chalk.blue("Enter your Response: "));
+
+if (response.toLowerCase() == "rule") {
+  console.log(
+    chalk.yellowBright('\n----------------Rules-------------\n1.Total 10 questions are there each question is compulsory. \n2.For every correct answer without using hints you will get 10 points.\n3.If you use hints you will get 5 points for the correct answer.\n4.For wrong answer -5 points.\n5.Type "hint" and press enter to get a hint.\n6.Submit your answer in a,b,c,d.\n7.Type "start" to start the game.\n-----------------------------------\n')
+  );
+
+  response = readlineSync.question(chalk.blue("Enter your Response: "));
+}
