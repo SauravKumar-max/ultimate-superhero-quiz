@@ -22,7 +22,7 @@ Styles the terminal string.
 Know more:- Read it here:- https://www.npmjs.com/package/chalk  
 ``` npm install chalk ```
 #### -Basic Knoweldge of javascript 
-
+##### Variables, Loops, If else conditional statements, Functions, Array, Objects, Objects inside an Array.
 
 
 
